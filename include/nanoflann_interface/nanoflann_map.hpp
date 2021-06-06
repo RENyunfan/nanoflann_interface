@@ -141,7 +141,7 @@ public:
         pcl::PCLPointCloud2 pcl_pc2;
         pcl_conversions::toPCL(*msg, pcl_pc2);
         pcl::fromPCLPointCloud2(pcl_pc2, *cloud_in);
-        cout<<"Input cloud: "<<cloud_in->size()<<endl;
+//        cout<<"Input cloud: "<<cloud_in->size()<<endl;
         AddPoints(cloud_in);
 
     }
