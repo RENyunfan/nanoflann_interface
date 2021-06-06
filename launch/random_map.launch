@@ -1,0 +1,53 @@
+<launch>
+    <arg name="map_size_x" value="30.0"/>
+    <arg name="map_size_y" value="30.0"/>
+    <arg name="map_size_z" value=" 5"/>
+    <arg name="c_num" value="150"/>
+    <arg name="p_num" value="150"/>
+
+
+    <node name="rviz_map" pkg="rviz" type="rviz" args="-d $(find simulator)/rviz/random_map.rviz" required="true"/>
+
+
+    <node pkg="simulator" name="random_map" type="random_map" output="screen">
+        <!--        <remap from="/global_cloud" to="/map_generator/global_cloud"/>-->
+        <!--        <remap from="/global_cloud" to="/random_forest/all_map"/>-->
+        <param name="sensing/radius" value="5.0"/>
+        <param name="sensing/rate" value="10.0"/>
+        <param name="map/x_size" value="$(arg map_size_x)"/>
+        <param name="map/y_size" value="$(arg map_size_y)"/>
+        <param name="map/z_size" value="$(arg map_size_z)"/>
+        <param name="map/resolution" value="0.1"/>
+
+        <param name="ObstacleShape/seed" value="2"/>
+        <param name="map/obs_num" value="$(arg p_num)"/>
+        <param name="ObstacleShape/lower_rad" value="0.5"/>
+        <param name="ObstacleShape/upper_rad" value="0.7"/>
+        <param name="ObstacleShape/lower_hei" value="1.2"/>
+        <param name="ObstacleShape/upper_hei" value="3.0"/>
+        <param name="map/circle_num" value="$(arg c_num)"/>
+        <param name="ObstacleShape/radius_l" value="0.7"/>
+        <param name="ObstacleShape/radius_h" value="0.5"/>
+        <param name="ObstacleShape/z_l" value="0.7"/>
+        <param name="ObstacleShape/z_h" value="0.8"/>
+        <param name="ObstacleShape/theta" value="0.5"/>
+        <!--        <param name="sensing/radius" value="5.0"/>-->
+        <!--        <param name="sensing/rate" value="10.0"/>-->
+        <!--        <param name="map/wall_num" value="0"/>-->
+        <!--        <param name="map/wall_width" value="1"/>-->
+        <!--        <param name="map/wall_length" value="10"/>-->
+        <!--        <param name="map/wall_resolution" value="0.3"/>-->
+        <!--        <param name="add_ground" value="false"/>-->
+        <!--        <param name="map/wall_height" value="$(arg map_size_z)"/>-->
+
+
+        <param name="map/circle_num" value="150"/>
+        <param name="CircleShape/lower_circle_rad" value="2.7"/>
+        <param name="CircleShape/lower_circle_rad" value="4.5"/>
+        <param name="ObstacleShape/z_l" value="0.7"/>
+        <param name="ObstacleShape/z_h" value="0.8"/>
+        <param name="ObstacleShape/theta" value="0.5"/>
+
+    </node>
+
+</launch>

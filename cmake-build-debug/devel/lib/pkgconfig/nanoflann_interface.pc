@@ -1,0 +1,8 @@
+prefix=/home/yunfan/workspace/fov_ws/src/FOV-Planner/planning/nanoflann_interface/cmake-build-debug/devel
+
+Name: nanoflann_interface
+Description: Description of nanoflann_interface
+Version: 0.0.0
+Cflags: -I/home/yunfan/workspace/fov_ws/src/FOV-Planner/planning/nanoflann_interface/include
+Libs: -L${prefix}/lib -lnanoflann_interface
+Requires: roscpp rospy std_msgs

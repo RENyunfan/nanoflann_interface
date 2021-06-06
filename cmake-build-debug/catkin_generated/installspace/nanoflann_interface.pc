@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: nanoflann_interface
+Description: Description of nanoflann_interface
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lnanoflann_interface
+Requires: roscpp rospy std_msgs
