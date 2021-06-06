@@ -86,4 +86,4 @@ inline void GetKNNPoints(Vec3 pt_in, int num,vector<Vec3>& nn_points, vector<flo
 
 # 2 Acknowledge
 
-感谢EC提供的代码模板[Ecstasy-EC](https://github.com/Ecstasy-EC)
+感谢[Ecstasy-EC](https://github.com/Ecstasy-EC)提供的代码模板
