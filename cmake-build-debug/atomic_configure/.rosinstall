@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /home/yunfan/workspace/fov_ws/src/FOV-Planner/planning/nanoflann_interface/cmake-build-debug/devel/setup.sh
+    local-name: /home/yunfan/Workspace/kdt_ws/src/nanoflann_interface/cmake-build-debug/devel/setup.sh

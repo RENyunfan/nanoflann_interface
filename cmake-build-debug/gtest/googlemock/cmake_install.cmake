@@ -44,7 +44,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/yunfan/workspace/fov_ws/src/FOV-Planner/planning/nanoflann_interface/cmake-build-debug/gtest/googlemock/gtest/cmake_install.cmake")
+  include("/home/yunfan/Workspace/kdt_ws/src/nanoflann_interface/cmake-build-debug/gtest/googlemock/gtest/cmake_install.cmake")
 
 endif()
 

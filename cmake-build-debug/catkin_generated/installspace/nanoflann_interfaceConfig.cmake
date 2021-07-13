@@ -67,8 +67,8 @@ set(nanoflann_interface_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(nanoflann_interface_SOURCE_PREFIX /home/yunfan/workspace/fov_ws/src/FOV-Planner/planning/nanoflann_interface)
-  set(nanoflann_interface_DEVEL_PREFIX /home/yunfan/workspace/fov_ws/src/FOV-Planner/planning/nanoflann_interface/cmake-build-debug/devel)
+  set(nanoflann_interface_SOURCE_PREFIX /home/yunfan/Workspace/kdt_ws/src/nanoflann_interface)
+  set(nanoflann_interface_DEVEL_PREFIX /home/yunfan/Workspace/kdt_ws/src/nanoflann_interface/cmake-build-debug/devel)
   set(nanoflann_interface_INSTALL_PREFIX "")
   set(nanoflann_interface_PREFIX ${nanoflann_interface_DEVEL_PREFIX})
 else()

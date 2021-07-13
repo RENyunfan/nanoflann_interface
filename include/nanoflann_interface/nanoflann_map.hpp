@@ -14,6 +14,7 @@ typedef Eigen::Matrix<double, 3, 3> Mat33;
 typedef Eigen::Matrix<double, 3, 1> Vec3;
 typedef pcl::PointXYZINormal PointType;
 typedef pcl::PointCloud<PointType> PointCloudXYZI;
+
 template<typename T>
 struct nanoflann_PointCloud {
     typename pcl::PointCloud<T>::Ptr pts;
@@ -305,8 +306,8 @@ public:
         GetNNPoint(pt_in,pt_out,dis);
         return pt_out;
     }
-  {
-        Vec3 pt_out;float dis;  inline float GetNNDis(Vec3 pt_in)
+  inline float GetNNDis(Vec3 pt_in){
+        Vec3 pt_out;float dis;
         GetNNPoint(pt_in,pt_out,dis);
         return dis;
     }
