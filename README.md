@@ -1,5 +1,64 @@
 # Nanoflann-interface
 
+
+> Please contact me if you have any questions
+>
+> Email: renyunfan@outlook.com
+
+In this project, we provide two [nanoflann](https://github.com/jlblancoc/nanoflann)-based KD-Tree structure for motion planning and point cloud processing algorithms. This package is just a example package, you only need to include a few header files to apply them to your own projects.
+
+* `nanoflann.hpp`: Nanoflann's source code.
+* `pointcloud_kdtree.hpp`: A point cloud type interface for PCL and ROS.
+* `state_kdtree.hpp`: A user-customizable KD-Tree data structure.
+
+# 1 PC-KD-Tree
+
+The typical application of `PcKdTree`  is storage environment point cloud. It contained point cloud down-sampling, adds points, deletes points, nearest neighbor search, and other APIs.
+
+First you need to set the environmental resolution and the map size.
+
+```cpp
+const int laserCloudWidth = 200;
+const int laserCloudHeight = 200;
+const int laserCloudDepth = 200;
+```
+
+Then define the kd-tree with shared_ptr
+
+```cpp
+typedef pcl::PointXYZINormal PointType;
+typedef pcl::PointCloud<PointType> PointCloudXYZI;
+
+PointCloudXYZI::Ptr featsFromMap(new PointCloudXYZI());
+PcKdTree<PointType>::Ptr localmap;
+localmap.reset(new PcKdTree<PointType>(featsFromMap,laserCloudDepth,laserCloudWidth,laserCloudHeight));
+```
+
+
+
+# 2 StateKdTree
+
+This class is new for Node state search using in RRT like algorithm.
+
+First define your datastructure in `state_kdtree.hpp`
+
+```cpp
+struct TreeNode {
+    Vec3 position;
+    double cost;
+    Vec3 nn_pt;
+    double nn_dist;
+    double nn_angle;
+    size_t idx_on_tree;
+    string name;
+    // Piece
+    // Trajectory
+    typedef shared_ptr<TreeNode> Ptr;
+};
+```
+
+
+
 # 1 Simple useage
 
 1）首先包含头文件（需要拷贝两个文件）

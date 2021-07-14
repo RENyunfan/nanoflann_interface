@@ -46,11 +46,16 @@ set(THIRD_PARTY
 #        ${THIRD_PARTY}
 #        )
 #
-add_executable(nanotree_test
-        Apps/unit_test/kd_tree_test.cpp
-        src/nanoflann_interface.cpp
+add_executable(pctree_test
+        Apps/unit_test/pc_tree_test.cpp
         )
-target_link_libraries(nanotree_test
+target_link_libraries(pctree_test
+        ${THIRD_PARTY}
+        )
 
+add_executable(statetree_test
+        Apps/unit_test/state_tree_test.cpp
+        )
+target_link_libraries(statetree_test
         ${THIRD_PARTY}
         )
